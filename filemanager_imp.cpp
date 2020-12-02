@@ -21,7 +21,21 @@ void recvOp() {
 	}
 		break;
 	case OP_LIST: {
-		
+		//Se crean una copia de la lista, otra del tamaño y otra del elemento
+		int listSize = 0;
+		string copia = nullptr;
+		std::vector<string*>* fileList = op->listFiles();
+
+		//Se envía el tamaño
+		listSize = fileList->size();
+		sendMSG(client_fd, &listSize, sizeof(int));
+
+		//Se envía el dato del principio de la lista y se elimina para coger el siguiente con erase se libera la memoria
+		for (std::vector<string*>::iterator it = fileList->begin(); it != fileList->end();it++){
+			copia = fileList.popFront();
+			sendMSG(client_fd, &copia, copia.length() + 1);
+			fileList->erase(fileList->begin());
+		}
 	}
 	case OP_READ: {
 		char* fileName = nullptr;
