@@ -10,9 +10,9 @@ void clientHandler(int clientID) {
 }
 
 int main(int argc, char**argv) {
-	server_fd = initServer(8081);
+	int server_fd = initServer(8081);
 	while (true) {
-		if (checkNewConnection()) {
+		if (checkNewConnections()) {
 			int newID = getNewConnection();
 			std::thread* client = new std::thread(clientHandler, newID);
 		}

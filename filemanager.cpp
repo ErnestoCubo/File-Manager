@@ -92,7 +92,7 @@ void FileManager::readFile(char* fileName, char* &data, unsigned long int & data
  * @param dataLength Longitud del fichero en bytes
  */
 
-void FileManager::writeFile(char* fileName, char* data, unsigned long dataLength)
+void FileManager::writeFile(char* fileName, char* data, unsigned long int dataLength)
 {
     string path=this->dirPath+"/"+string(fileName);
     FILE* f=fopen(path.c_str(),"w");
