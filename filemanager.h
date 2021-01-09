@@ -1,12 +1,7 @@
 #ifndef FILEMANAGER_H
-#define FILEMANAGER_H
-#include <iostream>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string>
-#include <map>
-#include <vector>
-#include <dirent.h>
+#define FILEMANAGER_Hop
+
+#include "utils.h"
 
 using namespace std;
 
