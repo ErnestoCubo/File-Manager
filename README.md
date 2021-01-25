@@ -1,2 +1,2 @@
 # File-Manager
-Programa que lista archivos de un directorio local, realiza funciones básicas de lectura/escritura y listado
+Proyecto distribuido a partir de un middleware en el que desde una máquina cliente se realizan peticiones de listado, escritura y lectura a la máquina del servidor.
